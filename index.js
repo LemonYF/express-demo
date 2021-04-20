@@ -18,7 +18,7 @@ app.use('/user', require('./router/user'))
 app.use('/list', require('./router/list'))
 
 // 监听3000端口
-let server = app.listen(3000, '127.0.0.1', () => {
+let server = app.listen(3000, () => {
     let host = server.address().address // host域
     let port = server.address().port // 端口号
 
