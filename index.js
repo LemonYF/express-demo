@@ -1,5 +1,8 @@
 let express = require('express') // 引入express
+let expressWs = require('express-ws')
+// let module1 = require('./router/app-socket')
 let app = express() // 相当于 http.createServer(app)
+expressWs(app)
 app.use('/public', express.static('public'))
 
 // 访问根路由
@@ -16,6 +19,9 @@ app.use('/user', require('./router/user'))
 
 // 引入list.js
 app.use('/list', require('./router/list'))
+
+// socket.js
+app.use('/socket', require('./router/app-socket'))
 
 // 设置请求跨域
 // app.all('*', function (req, res, next) {
