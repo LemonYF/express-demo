@@ -13,7 +13,7 @@ router
     })
     .get('/socket', function(req, resp) {
         console.log('收到信息')
-        ws.send('你连接成功了')
+        resp.send('你连接成功了')
     })
     .post('/socket', function(req, resp) {
     })
